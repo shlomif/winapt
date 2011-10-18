@@ -1,0 +1,83 @@
+Introduction:
+-------------
+
+This is a functional spec for Winapt, which is a package management system
+for Win32, similar to such systems for UNIX-like systems (e.g: Debian's 
+apt-get/dpkg, RedHat's rpm/yum, Mandriva's rpm/urpmi, smart or
+Gentoo's portage).
+
+(The characters are taken from http://www.ozyandmillie.org/ )
+
+Scenario 1: "We Want Free Stuff"
+--------------------------------
+
+Millie is a young fox girl who likes to use Windows XP, and still haven't
+gotten around to install Linux. However, she is tired of keeping up with
+the various open-source and non-open-source software she has on her computer:
+Inkscape, eMule, Firefox, Thunderbird, Paint Shop Pro, etc. At one point
+her geek friend Stefan the Aardvark (who is a die-hard Linux user) recommends 
+her to install Winapt, so she can manage her software.
+
+She browses to the winapt site, downloads the installer, accepts the EULA,
+and installs the software. Then she starts the dialog which downloads the
+updated remote-sources lists and then packages lists. It detects which
+software is installed on her computer, and automatically upgrades it. Then
+it gives her a long list of other software.
+
+Millie installs the "Pink Flamingo Bathtub Game", the "Tomboy Tomboy edition"
+note taker, the "Burn ants burn" real-life simulator, and a game to put
+electronic needles on Ayn Rand's face. She goes to sleep happy.
+
+The next day when she wakes up, Winapt informs her that she has updates for
+her installed programs, and gives her the option of selectively 
+upgrading them.
+
+Scenerio 2: "Kids Just Wanna Have Fun"
+--------------------------------------
+
+Stefan and Millie are distressed. They were placed in charge of their
+school's computer lab. While the server is a SGI Altix super-computer running
+Linux that is very low-maintenance and hardly ever gives them any problems,
+they also have 100s of Windows NT computers which require a lot of manual 
+configuration. Every once in a while, a kid asks for a piece of software which 
+they need to install on every computer. As a result, it's 100's of 
+->Next->Next->Finish calls.
+
+They decide to solve it once and for all. They install Winapt on all the
+computers, and configure it to run in the background and at startup. Winapt
+first checks for a mirror of the files on the Linux server, so they won't have
+to overload their school's bandwidth. Whenever they need a new piece of software
+Stefan runs this command on the server:
+
+$ winapt-spread --install Inkscape GIMP OnM-Comics-Reader
+
+This command downloads the programs and connects to all the clients to install
+these softwares.
+
+Stefan and Millie are happy and now have much more time for playing
+"Quake 10: Furry Showdown".
+
+Scenario 3: "I'm not a Technical Sheep! I just want to use my computer."
+------------------------------------------------------------------------
+
+Felicia is popular girl that no one seems to like in the class of Millie and
+Stefan. She's not a geek (of computers or otherwise), and just uses her
+computer to draw pictures of ponies ("OMG!!! They're so cute") using Inkscape.
+
+At one point she discovers a way to consistently make Inkscape crash, and
+reports it in the Inkscape bug tracker. The Inkscape developer is Stefan
+who is a die-hard Linux user, and while being able to cross-compile to Windows
+will never run it. What Stefan does to see if his bug-fix helps Felicia
+is:
+
+1. Build a modified package.
+
+2. Upload it to the Inkscape master site under a different "patched" directory.
+
+3. Instruct Felicia to enter the patch ID in a special Inkscape 
+dialog (also possible using the Winapt GUI).
+
+Felicia then installs the patch, see that it works, and tells Stefan about
+it. Stefan is happy and integrates the source patch into the mainline.
+
+Another Inkscape bug was fixed.

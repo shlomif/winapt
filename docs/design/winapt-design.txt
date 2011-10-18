@@ -1,0 +1,110 @@
+Winapt (codenamed "Icehamster") Design Notes
+--------------------------------------------
+
+The Mission:
+------------
+
+1. Write a tool for developers to create re-usable MS-Windows packages. (a la
+.rpm or .deb.)
+
+2. Write a tool that will allow users to install these packages on their 
+computers. 
+
+3. Write a tool that will allow users to install or uninstall packages
+from the Net or from Media, along with all of their dependencies. 
+(a la apt/urpmi/yum)
+
+4. Write a hosting backend management for hosting such packages on remote
+servers.
+
+Technologies that will be used:
+-------------------------------
+
+1. Perl - http://www.perl.org/ - writing package management and build systems
+in C is widely considered a bad idea. (dpkg/apt and rpm are written in C
+because they are expected to run on an embedded device in the electricity
+cabinet of the ladies restroom in a gas station in Albuquerque.) On a standard
+Win32 system we can easily install the Perl run-time without worrying too
+much about bloating the system, so there's no reason why we shouldn't use it.
+
+    Why not a different language?
+    -----------------------------
+
+    1. I know and like Perl the best, and so I'm going to use what I like.
+
+    2. I think it would be very suitable for this.
+
+    3. There are plenty of good and useful modules in CPAN.
+
+    4. Many programmers know Perl enough to contribute.
+    
+    5. If you don't like it, write an alterantive with a different 
+    language. :-)
+    
+2. PAR - http://par.perl.org/ - this will allow us to prepare self-contained
+packages of Winapt.
+
+Desired Features of the t->\infinity Version:
+-------------------------------------------
+
+(in no particular order)
+
+* Handle installation per-user and global installation.
+
+* Manage registry keys.
+
+* Have the ability to track several major versions of the same program and 
+install them all at once.
+
+* Seemless upgrade of packages.
+
+* Install new packages easily.
+
+* Resolve dependencies.
+
+* No (!!) file dependencies.
+
+* Be able to fetch using FTP, HTTP, Bit-Torrent, etc. Use libwww-perl (LWP) or 
+whatever.
+
+* Support authentication and authorization. (client side and server side).
+
+* Handle installation scripts in Perl, CMD.EXE, cygwin/MSys bash/zsh (requires
+installation of the latter), and possibly other languages by inflection 
+(i.e: extract the scripts and use perl to invoke them. Requires their 
+installation)
+
+* Would provide Perl modules to facilitate the installation. Some configuration
+files can be written in YAML or XML, and be processed by the Perl script to 
+perform robust installation/uninstallation.
+
+* Internationalization and Localization support.
+
+* Support only Win2000, WinXP, Win2003 (and possibly Windows Vista). Win98 is 
+too Evil to support properly, and WinME even more so. It may or may not work 
+on the Win95/98/ME line, but we will not actively support it there.
+
+* Portability to UNIXes is not an issue. UNIXes have their own package 
+management schemes, which whatever their failing are more concentrated on 
+UNIX support. Win32 is very different, and we will do things differently, and
+occasionally using the Win32 API.
+
+Pitfalls:
+---------
+
+* How do we handle file/dir permissions on Win32?
+
+* What archive format to use to package the files?
+
+* How do we efficiently clean up the Win32 Registry after populating it.
+
+* Note: I (= Shlomi Fish) while being very proficient in Perl, is by no
+means a Win32 system programming expert. So I could use any help I can get.
+
+* I also need some help in learning about how to run Windows on Linux using
+VMWare, and I need a VMWare license.
+
+* 
+
+
+

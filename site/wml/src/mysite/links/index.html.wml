@@ -1,0 +1,13 @@
+#include "template.wml"
+
+<latemp_subject "Links" />
+<latemp_version_control_id "$Id$" />
+
+<h2>Winapt Links</h2>
+
+<ul>
+<li>
+<a href="http://www.debian.org/doc/manuals/apt-howto/index.en.html">APT 
+Howto</a> - information about Apt - the Debian package resolution system.
+</li>
+</ul>

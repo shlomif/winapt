@@ -1,0 +1,19 @@
+#include "template.wml"
+
+<latemp_subject "Winapt - Package Management for Microsoft Windows" />
+<latemp_version_control_id "$Id$" />
+
+<p>
+Winapt aims to be a package management system for the Microsoft Windows 
+operating systems. For the time being you can read the following documents:
+</p>
+
+<ul>
+<li>
+<a href="./docs/Icehamster-Executive-Summary.html">The Executive Summary</a>
+</li>
+<li>
+<a href="./docs/winapt-design.txt">The Design Document with Various Notes</a>
+</li>
+</ul>
+
